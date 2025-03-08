@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Music Player</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='index.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Music Player</h1>
+    <div id="main">
+      <div class="container" id="search">
+        <!-- Search Form -->
+        <h2>Search Songs</h2>
+        <form id="searchsongs" action="/" method="post">
+          <input type="text" name="search" placeholder="Search by title" />
+          <!-- <button type="submit">Search</button> -->
+          <button type="submit" class="custom-btn btn-2">Search</button>
+        </form>
+
+        <!-- Song List -->
+        <h2>Song List</h2>
+        <ul>
+          <!-- ----------------------------------------------------------- -->
+          {% for song in songs %}
+          <li>
+            {{ song[1] }}
+            <div id="symbols">
+              <a href="{{ url_for('play', filename=song[2]) }}" target="_blank">
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAJ9JREFUSEvtlb0NgCAQRp+bWbqUEziFU2jnBJaWVk5hZ0iwo+B+4iUGengf7w6uI2h1QVwa+DPzTXVJdQ+cwOVZhxrVCbwCIzB5wWvBWwbuOcBiDSAFv7w5B1Dr14JTgNui3wJ+b6/S7wFW6fcEi/T/AizqdI8bf95cIc9JpLX0y0lVq7RawCFDYgCOiLFoHUTF/TU1bmAXA021i8aaQx7FhiwfZ+ZQaQAAAABJRU5ErkJggg=="
+                />
+              </a>
+              <form
+                action="{{ url_for('delete', song_id=song[0]) }}"
+                method="post"
+                style="display: inline"
+              >
+                <button id="deletepng" type="submit">
+                  <img src="../static/images/delete (1).png" />
+                </button>
+              </form>
+            </div>
+          </li>
+          <!-- ----------------------------------------------------------- -->
+
+          {% endfor %}
+        </ul>
+      </div>
+      <!-- Upload Form -->
+      <div class="container" id="upload">
+        <h2>Upload New Song</h2>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+          <!-- <label for="title">Song Title:</label> -->
+          <input
+            type="text"
+            id="title"
+            name="title"
+            placeholder="Enter The Song Name"
+            required
+          />
+          <div id="newsong">
+            <label for="file">Select MP3:</label>
+            <input type="file" id="file" name="file" accept=".mp3" required />
+          </div>
+          <!-- <button type="submit">Upload</button> -->
+          <button type="submit" class="custom-btn btn-2">Upload</button>
+        </form>
+        <!-- From Uiverse.io by TheAbieza -->
+        <div class="img">
+          <div class="plate">
+            <div class="black">
+              <div class="border">
+                <div class="white">
+                  <div class="center"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="player">
+            <div class="rect"></div>
+            <div class="circ"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,253 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #c6fcff;
+}
+
+h1 {
+  /* border: 2px solid red; */
+  background-color: rgb(78, 209, 236);
+  margin: 10px 20px;
+  border-radius: 10px;
+  font-size: 2.5em;
+  padding: 7px;
+  text-align: center;
+}
+
+#main {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.container {
+  /* border: 2px solid red; */
+  border-radius: 10px;
+  background-color: rgb(94, 207, 225);
+  width: 100%;
+  height: 80vh;
+  padding: 10px;
+  margin: 20px;
+}
+
+.container h2 {
+  font-size: 1.5em;
+}
+
+#search h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#search form {
+  text-align: center;
+}
+
+#search ul {
+  padding: 10px;
+}
+
+#search ul li {
+  text-transform: capitalize;
+  list-style: none;
+  background-color: #0093c0;
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 15px;
+  margin-bottom: 10px;
+}
+
+#upload h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#upload form {
+  text-align: center;
+}
+
+#deletepng {
+  background: none;
+  text-decoration: none;
+  border-style: none;
+}
+
+#symbols {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  font-size: 1.2em;
+  border-style: none;
+  border: 2px solid black;
+  border-radius: 7px;
+  padding: 5px 15px;
+  margin: 10px;
+}
+
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  outline: none;
+  font-size: 15px;
+}
+
+.btn-2 {
+  background: #004dff;
+  background: linear-gradient(0deg, #004dff 0%, #004dff 100%);
+  border: none;
+}
+
+.btn-2:before {
+  height: 0%;
+  width: 2px;
+}
+
+.btn-2:hover {
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.5),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, 0.4);
+}
+#file {
+  border-style: none;
+}
+
+/* From Uiverse.io by TheAbieza */
+.img {
+  margin: 30px 200px;
+  width: 300px;
+  height: 300px;
+  background-color: #0093c0;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 5px 5px 0 0 #675d50;
+}
+
+.plate {
+  width: fit-content;
+}
+
+.plate .black,
+.plate .white,
+.plate .center,
+.plate .border {
+  border-radius: 100%;
+}
+
+.img,
+.plate .black,
+.plate .white,
+.plate .border {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plate .black {
+  width: 150px;
+  height: 150px;
+  background-color: #675d50;
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.plate .white {
+  width: 70px;
+  height: 70px;
+  background-color: #f3deba;
+}
+
+.plate .center {
+  width: 20px;
+  height: 20px;
+  background-color: #675d50;
+}
+
+.plate .border {
+  width: 111px;
+  height: 111px;
+  border-top: 3px solid #f3deba;
+  border-bottom: 3px solid #f3deba;
+  border-left: 3px solid #675d50;
+  border-right: 3px solid #675d50;
+}
+
+.player {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: fit-content;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 8px;
+  margin-right: 8px;
+  rotate: -45deg;
+}
+
+.player .circ {
+  width: 25px;
+  height: 25px;
+  background-color: #f3deba;
+  border-radius: 100%;
+  z-index: 1;
+}
+
+.player .rect {
+  width: 10px;
+  height: 55px;
+  background-color: #f3deba;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 5px;
+}
+
+#newsong {
+  margin: 10px;
+}
+#newsong label {
+  position: relative;
+  left: 80px;
+  font-weight: bold;
+}
+
+#newsong input {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  left: 80px;
+}
