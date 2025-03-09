@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <title>Music Player</title>
+    <link rel="icon" href="../static/images/music-solid-24.png" type="image/x-icon">
     <link
       rel="stylesheet"
       type="text/css"
@@ -13,6 +14,7 @@
     <div id="main">
       <div class="container" id="search">
         <!-- Search Form -->
+         <div id="searchheader">
         <h2>Search Songs</h2>
         <form id="searchsongs" action="/" method="post">
           <input type="text" name="search" placeholder="Search by title" />
@@ -22,12 +24,30 @@
 
         <!-- Song List -->
         <h2>Song List</h2>
+      </div>
         <ul>
           <!-- ----------------------------------------------------------- -->
           {% for song in songs %}
           <li>
             {{ song[1] }}
             <div id="symbols">
+              <form
+                action="{{ url_for('edit', song_id=song[0]) }}"
+                method="post"
+                style="display: inline"
+              >
+                <input
+                  type="text"
+                  id="editin"
+                  name="new_title"
+                  placeholder="New title"
+                  required
+                />
+                <!-- <button id="editbut" type="submit">Edit</button> -->
+                <button id="editbut" type="submit" class="custom-btn btn-2">
+                  Edit
+                </button>
+              </form>
               <a href="{{ url_for('play', filename=song[2]) }}" target="_blank">
                 <img
                   src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAJ9JREFUSEvtlb0NgCAQRp+bWbqUEziFU2jnBJaWVk5hZ0iwo+B+4iUGengf7w6uI2h1QVwa+DPzTXVJdQ+cwOVZhxrVCbwCIzB5wWvBWwbuOcBiDSAFv7w5B1Dr14JTgNui3wJ+b6/S7wFW6fcEi/T/AizqdI8bf95cIc9JpLX0y0lVq7RawCFDYgCOiLFoHUTF/TU1bmAXA021i8aaQx7FhiwfZ+ZQaQAAAABJRU5ErkJggg=="

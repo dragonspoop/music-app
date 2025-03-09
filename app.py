@@ -74,5 +74,13 @@ def delete(song_id):
         conn.commit()
 
     return redirect(url_for('index'))
+@app.route('/edit/<int:song_id>', methods=['POST'])
+def edit(song_id):
+    new_title = request.form.get('new_title')
+    if new_title:
+        cursor.execute("UPDATE songs SET title = %s WHERE id = %s", (new_title, song_id))
+        conn.commit()
+
+    return redirect(url_for('index'))
 if __name__ == '__main__':
     app.run(debug=True)
