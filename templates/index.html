@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Tillu² Music Player</title>
-    <link rel="icon" href="../static/images/music-solid-24.png" type="image/x-icon">
+    <title>Music Player</title>
+    <link
+      rel="icon"
+      href="../static/images/music-solid-24.png"
+      type="image/x-icon"
+    />
     <link
       rel="stylesheet"
       type="text/css"
@@ -10,23 +14,21 @@
     />
   </head>
   <body>
-    <h1>Tillu² Music Player</h1>
+    <h1>Music Player</h1>
     <div id="main">
       <div class="container" id="search">
         <!-- Search Form -->
-         <div id="searchheader">
-        <h2>Search Songs</h2>
-        <form id="searchsongs" action="/" method="post">
-          <input type="text" name="search" placeholder="Search by title" />
-          <!-- <button type="submit">Search</button> -->
-          <button type="submit" class="custom-btn btn-2">Search</button>
-        </form>
+        <div id="searchheader">
+          <h2>Search Songs</h2>
+          <form id="searchsongs" action="/" method="post">
+            <input type="text" name="search" placeholder="Search by title" />
+            <button type="submit" class="custom-btn btn-2">Search</button>
+          </form>
 
-        <!-- Song List -->
-        <h2>Song List</h2>
-      </div>
+          <!-- Song List -->
+          <h2>Song List</h2>
+        </div>
         <ul>
-          <!-- ----------------------------------------------------------- -->
           {% for song in songs %}
           <li>
             {{ song[1] }}
@@ -43,7 +45,7 @@
                   placeholder="New title"
                   required
                 />
-                <!-- <button id="editbut" type="submit">Edit</button> -->
+            
                 <button id="editbut" type="submit" class="custom-btn btn-2">
                   Edit
                 </button>
@@ -64,7 +66,6 @@
               </form>
             </div>
           </li>
-          <!-- ----------------------------------------------------------- -->
 
           {% endfor %}
         </ul>
@@ -73,7 +74,6 @@
       <div class="container" id="upload">
         <h2>Upload New Song</h2>
         <form action="/upload" method="post" enctype="multipart/form-data">
-          <!-- <label for="title">Song Title:</label> -->
           <input
             type="text"
             id="title"
@@ -85,11 +85,10 @@
             <label for="file">Select MP3:</label>
             <input type="file" id="file" name="file" accept=".mp3" required />
           </div>
-          <!-- <button type="submit">Upload</button> -->
           <button type="submit" class="custom-btn btn-2">Upload</button>
         </form>
         <!-- From Uiverse.io by TheAbieza -->
-        <div class="img">
+        <div class="dj">
           <div class="plate">
             <div class="black">
               <div class="border">
@@ -99,12 +98,7 @@
               </div>
             </div>
           </div>
-
-          <div class="player">
-            <div class="rect"></div>
-            <div class="circ"></div>
-          </div>
-        </div>
+        
       </div>
     </div>
   </body>

@@ -9,17 +9,18 @@
 }
 
 body {
-  background-color: #ffffff;
+  background: #e8e8e8;
+  color: #333;
 }
 
 h1 {
   /* border: 2px solid red; */
-  background-color: rgb(0, 208, 255);
+  color: #2C3E50;
+  background: #fff;
   margin: 10px 20px;
   border-radius: 10px;
-  font-size: 2.5em;
+  font-size: 3.5em;
   padding: 7px;
-  color: #003f6c;
   text-align: center;
 }
 
@@ -32,7 +33,7 @@ h1 {
 input {
   font-size: 1.2em;
   border-style: none;
-  border: 2px solid black;
+  border: 2px solid #000000;
   border-radius: 7px;
   padding: 5px 15px;
   margin: 10px;
@@ -46,8 +47,8 @@ input::placeholder {
 
 .container {
   /* border: 2px solid red; */
-  border-radius: 10px;
-  background-color: rgb(71, 203, 255);
+  border-radius: 15px;
+  background: #FFFFFF;
   width: 100%;
   height: 80vh;
   /* padding: 10px; */
@@ -73,7 +74,8 @@ input::placeholder {
   z-index: 10;
   position: sticky;
   top: 0;
-  background: rgb(71, 203, 255);
+  backdrop-filter: blur(10px);
+  background-color: #fff;
 }
 
 #search form {
@@ -88,7 +90,8 @@ input::placeholder {
 #search ul li {
   text-transform: capitalize;
   list-style: none;
-  background-color: #00a4ea;
+  /* border: 2px solid #D3D3D3; */
+  background: #dedede;
   width: 100%;
   border-radius: 10px;
   display: flex;
@@ -155,7 +158,7 @@ input::placeholder {
 
 .btn-2 {
   background: #004dff;
-  background: linear-gradient(0deg, #004dff 0%, #004dff 100%);
+  background: linear-gradient(0deg, #004dff 0%, #1E90FF 100%);
   border: none;
 }
 
@@ -175,14 +178,39 @@ input::placeholder {
   font-size: 1em;
 }
 
-.img {
+#newsong {
+  margin: 10px;
+}
+#newsong label {
+  font-size: 1.2em;
+  position: relative;
+  left: 80px;
+  font-weight: bold;
+}
+
+#newsong input {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  left: 80px;
+  
+}
+
+#editbut {
+  height: 25px;
+  width: 60px;
+  padding: 0;
+}
+
+/* From Uiverse.io by TheAbieza */ 
+.dj {
   margin: 30px 200px;
-  width: 300px;
-  height: 300px;
-  background-color: #05536b;
+  width: 320px;
+  height: 320px;
+  background-color: #87CEFA;
   border-radius: 10px;
   position: relative;
-  box-shadow: 5px 5px 0 0 #675d50;
+  box-shadow: 5px 5px 0 0 #675D50;
 }
 
 .plate {
@@ -196,7 +224,7 @@ input::placeholder {
   border-radius: 100%;
 }
 
-.img,
+.dj,
 .plate .black,
 .plate .white,
 .plate .border {
@@ -208,7 +236,7 @@ input::placeholder {
 .plate .black {
   width: 150px;
   height: 150px;
-  background-color: #675d50;
+  background-color: #675D50;
   animation: rotation 2s infinite linear;
 }
 
@@ -225,74 +253,20 @@ input::placeholder {
 .plate .white {
   width: 70px;
   height: 70px;
-  background-color: #f3deba;
+  background-color: #F3DEBA;
 }
 
 .plate .center {
   width: 20px;
   height: 20px;
-  background-color: #675d50;
+  background-color: #675D50;
 }
 
 .plate .border {
   width: 111px;
   height: 111px;
-  border-top: 3px solid #f3deba;
-  border-bottom: 3px solid #f3deba;
-  border-left: 3px solid #675d50;
-  border-right: 3px solid #675d50;
-}
-
-.player {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: fit-content;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin-bottom: 8px;
-  margin-right: 8px;
-  rotate: -45deg;
-}
-
-.player .circ {
-  width: 25px;
-  height: 25px;
-  background-color: #f3deba;
-  border-radius: 100%;
-  z-index: 1;
-}
-
-.player .rect {
-  width: 10px;
-  height: 55px;
-  background-color: #f3deba;
-  position: absolute;
-  bottom: 0;
-  margin-bottom: 5px;
-}
-
-#newsong {
-  margin: 10px;
-}
-#newsong label {
-  font-size: 1.2em;
-  position: relative;
-  left: 80px;
-  font-weight: bold;
-}
-
-#newsong input {
-  padding: 0;
-  margin: 0;
-  position: relative;
-  left: 80px;
-}
-
-#editbut {
-  height: 25px;
-  width: 60px;
-  padding: 0;
+  border-top: 3px solid #F3DEBA;
+  border-bottom: 3px solid #F3DEBA;
+  border-left: 3px solid #675D50;
+  border-right: 3px solid #675D50;
 }
